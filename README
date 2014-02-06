@@ -1,1 +1,10 @@
 README for Roku FuelPHP Module
+
+
+This is a FuelPHP module (fuel/app/modules/roku) for controlling a Roku device on a network.
+
+It also has launch method if you have installed the simple video player dev channel on your Roku.  This is useful for launching local and remote videos, but must be in format compatible with Roku (mp4/mkv).
+
+
+There is a hard coded URL in here somewhere, sorry.
+
