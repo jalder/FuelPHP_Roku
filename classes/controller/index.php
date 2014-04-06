@@ -16,9 +16,9 @@ class Controller_Index extends \Controller
 		$devices = $mongo->get('devices');
 		foreach($devices as $d)
 		{
-			if($d['location']&&$d['type']=='roku:ecp')
+			if($d['base_url']&&$d['type']=='roku')
 			{
-				$this->remote->location = $d['location'];
+				$this->remote->location = $d['base_url'];
 			}
 		}
 	}

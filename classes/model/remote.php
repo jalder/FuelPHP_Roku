@@ -29,10 +29,16 @@ class Model_Remote extends \Model
 
 	public function channels()
 	{
-		$this->location = 'http://192.168.1.104:8060/';
 		$curl = \Request::forge($this->location.'query/apps','curl');
 		$curl->set_method('get');
-		$curl->execute();
+		try
+		{
+			$curl->execute();
+		}
+		catch(\RequestException $e)
+		{
+			return array();
+		}
 		//var_dump($curl->response()->body);
 		$xml = simplexml_load_string($curl->response()->body);
 		//var_dump($xml);
